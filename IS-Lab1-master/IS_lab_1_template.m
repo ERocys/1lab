@@ -97,7 +97,7 @@ end
 
 % calculate the total error for these 5 inputs 
  e1 = abs(e(1)) + abs(e(2)) + abs(e(3)) + abs(e(4)) + abs(e(5));
- e2 = e(1) + e(2) + e(3) - e(4) - e(5);
+ e2 = e(1) + e(2) + e(3) + e(4) + e(5);
 n=0.05;
 % write training algorithm
 j=0;
@@ -134,7 +134,7 @@ i=0;
 	% calculate the total error for these 5 inputs 
 	%e = abs(e1) + abs(e2) + abs(e3) + abs(e4) + abs(e5);
 end
-
+figure(1)
 x=0:0.01:1;
 f=-b/w2-x*w1/w2;
 plot(x,f,'g')
@@ -142,14 +142,94 @@ hold on
 plot(hsv_value_A1,metric_A1,'b*')
 plot(hsv_value_A2,metric_A2,'b*')
 plot(hsv_value_A3,metric_A3,'b*')
-plot(hsv_value_A1,metric_A4,'b*')
-plot(hsv_value_A2,metric_A5,'b*')
-plot(hsv_value_A3,metric_A6,'b*')
-plot(hsv_value_A1,metric_A7,'b*')
-plot(hsv_value_A2,metric_A8,'b*')
-plot(hsv_value_A3,metric_A9,'b*')
+plot(hsv_value_A4,metric_A4,'b*')
+plot(hsv_value_A5,metric_A5,'b*')
+plot(hsv_value_A6,metric_A6,'b*')
+plot(hsv_value_A7,metric_A7,'b*')
+plot(hsv_value_A8,metric_A8,'b*')
+plot(hsv_value_A9,metric_A9,'b*')
 plot(hsv_value_P1,metric_P1,'ro')
 plot(hsv_value_P2,metric_P2,'ro')
-plot(hsv_value_P1,metric_P3,'ro')
-plot(hsv_value_P2,metric_P4,'ro')
+plot(hsv_value_P3,metric_P3,'ro')
+plot(hsv_value_P4,metric_P4,'ro')
 hold off
+
+v=hsv_value_A4*w1+metric_A4*w2+b;
+figure(2)
+subplot(4,2,1)
+image(A4);
+if v>0
+    title('obuolys');
+else
+    title('kriause');
+end
+
+v=hsv_value_A5*w1+metric_A5*w2+b;
+figure(2)
+subplot(4,2,2)
+image(A5);
+if v>0
+    title('obuolys');
+else
+    title('kriause');
+end
+
+v=hsv_value_A6*w1+metric_A6*w2+b;
+figure(2)
+subplot(4,2,3)
+image(A6);
+if v>0
+    title('obuolys');
+else
+    title('kriause');
+end
+    
+v=hsv_value_A7*w1+metric_A7*w2+b;
+figure(2)
+subplot(4,2,4)
+image(A7);
+if v>0
+    title('obuolys');
+else
+    title('kriause');
+end
+
+v=hsv_value_A8*w1+metric_A8*w2+b;
+figure(2)
+subplot(4,2,5)
+image(A8);
+if v>0
+    title('obuolys');
+else
+    title('kriause');
+end
+
+v=hsv_value_A9*w1+metric_A9*w2+b;
+figure(2)
+subplot(4,2,6)
+image(A9);
+if v>0
+    title('obuolys');
+else
+    title('kriause');
+end
+
+v=hsv_value_P3*w1+metric_P3*w2+b;
+figure(2)
+subplot(4,2,7)
+image(P3);
+if v>0
+    title('obuolys');
+else
+    title('kriause');
+end
+
+v=hsv_value_P4*w1+metric_P4*w2+b;
+figure(2)
+subplot(4,2,8)
+image(P4);
+if v>0
+    title('obuolys');
+else
+    title('kriause');
+end
