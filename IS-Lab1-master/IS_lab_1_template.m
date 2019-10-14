@@ -98,7 +98,7 @@ end
 % calculate the total error for these 5 inputs 
  e1 = abs(e(1)) + abs(e(2)) + abs(e(3)) + abs(e(4)) + abs(e(5));
  e2 = e(1) + e(2) + e(3) + e(4) + e(5);
-n=0.05;
+n=0.1;
 % write training algorithm
 j=0;
 while e1 ~= 0 % executes while the total error is not 0
@@ -110,7 +110,7 @@ while e1 ~= 0 % executes while the total error is not 0
 % 
 %   update parameters using current inputs ant current error
  	w1 = w1 + n*e(1)*x1(1)+ n*e(2)*x1(2)+ n*e(3)*x1(3)+n*e(4)*x1(4)+n*e(5)*x1(5);
-    w2 = w1 + n*e(1)*x2(1)+ n*e(2)*x2(2)+ n*e(3)*x2(3)+n*e(4)*x2(4)+n*e(5)*x2(5);
+    w2 = w2 + n*e(1)*x2(1)+ n*e(2)*x2(2)+ n*e(3)*x2(3)+n*e(4)*x2(4)+n*e(5)*x2(5);
     b = b + n*e2;
 % 
 %   Test how good are updated parameters (weights) on all examples used for training
